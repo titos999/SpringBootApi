@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Spring Boot Thymeleaf Hello World Example</title>
+        <title>Spring Boot Thymeleaf Get Students - Animals</title>
 
         <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
         <link rel="stylesheet" th:href="@{/css/main.css}"/>
@@ -22,15 +22,23 @@
         <main role="main" class="container">
 
             <div class="starter-template">
-                <h1>Home Page</h1>
+                <h1>Spring Boot Thymeleaf Get Students - Animals</h1>
                 <h2>
                     <span th:text="'Hello, ' + ${message}"></span>
                 </h2>
             </div>
 
-            <ol>
-                <li th:each="task : ${tasks}" th:text="${task}"></li>
-            </ol>
+            <h3>Students</h3>
+            <ul>
+                <li th:each="student : ${students}"
+                    th:text="|${student.id}. Name: ${student.name}, Email: ${student.email}, Age: ${student.age}|">
+                </li>
+            </ul>
+
+            <h3>Animals</h3>
+            <ul>
+                <li th:each="animal : ${animals}" th:text="|${animal.id}. ${animal.name}|"></li>
+            </ul>
 
         </main>
 
