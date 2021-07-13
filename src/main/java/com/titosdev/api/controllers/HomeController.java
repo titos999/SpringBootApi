@@ -36,4 +36,5 @@ public class HomeController {
         model.addAttribute("message", name);
         return "welcome";
     }
+
 }
